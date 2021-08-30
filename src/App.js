@@ -1,10 +1,14 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import header from 'Header';
+import Header from './components/Header';
+import Rockets from './components/Rockets';
+import Missions from './components/Missions';
+import Profile from './components/Profile';
 
 function App() {
   return (
     <Router>
+      <Header />
       <Switch>
         <Route path="/rockets">
           <Rockets />
@@ -20,4 +24,4 @@ function App() {
   );
 }
 
-export default App
+export default App;

@@ -1,12 +1,11 @@
-import './App.css';
 import { NavLink } from 'react-router-dom';
-import logo from '/logo.png';
+import logo from '../logo.png';
 
-function header () {
+function header() {
   return (
     <div>
       <div>
-        <img src={logo}/>
+        <img src={logo} alt="logo" className="logo" />
         <h1>Space Travelers&apos; Hub</h1>
       </div>
       <nav>
