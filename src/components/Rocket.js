@@ -1,13 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { reserveRocket } from '../redux/rockets/rockets';
+import { reserveRocket, cancelReservation } from '../redux/rockets/rockets';
 
 const Rocket = ({ rocket }) => {
   const dispatch = useDispatch();
 
   const handleReserve = (id) => {
     dispatch(reserveRocket(id));
+  };
+
+  const handleReserveCancelation = (id) => {
+    dispatch(cancelReservation(id));
   };
 
   return (
@@ -18,7 +22,7 @@ const Rocket = ({ rocket }) => {
         <p>{rocket.description}</p>
         {rocket.reserved
           ? <button type="button" className="btn btn-outline-secondary" onClick={() => handleReserve(rocket.id)}>Cancel Reservation</button>
-          : <button type="button" className="btn btn-primary" onClick={() => handleReserve(rocket.id)}>Reserve Rocket</button>}
+          : <button type="button" className="btn btn-primary" onClick={() => handleReserveCancelation(rocket.id)}>Reserve Rocket</button>}
       </div>
     </li>
   );
