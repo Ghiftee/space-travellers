@@ -1,9 +1,14 @@
-import React from 'react';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchMissions } from '../redux/missions/missions';
 
-const Missions = () => (
-  <div>
-    Missions
-  </div>
-);
+export default function Missions() {
+  const dispatch = useDispatch();
 
-export default Missions;
+  useEffect(() => {
+    dispatch(fetchMissions);
+  }, [fetchMissions]);
+  return (
+    <p>All Missions</p>
+  );
+}
