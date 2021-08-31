@@ -17,7 +17,8 @@ function header() {
       </div>
       <nav>
         <NavLink
-          to="/rockets"
+          exact
+          to="/"
           className="px-3"
         >
           Rockets
