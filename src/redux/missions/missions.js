@@ -36,4 +36,5 @@ const reducer = (state = initialState, action) => {
   }
 };
 
+export const missions = (state) => state.missionsReducer;
 export default reducer;
