@@ -35,10 +35,19 @@ export const fetchMissions = async (dispatch, getState) => {
 
 const reducer = (state = initialState, action) => {
   let newState;
+  let theMission;
   switch (action.type) {
     case ADD_MISSION:
       return [...state, action.payload];
     case JOIN_MISSION:
+      theMission = state.find((mission) => mission.mission_id === action.payload.mission_id);
+      if (theMission && theMission.reserved) {
+        newState = state.map((mission) => {
+          if (mission.mission_id !== action.payload.mission_id) return mission;
+          return { ...mission, reserved: false };
+        });
+        return newState;
+      }
       newState = state.map((mission) => {
         if (mission.mission_id !== action.payload.mission_id) return mission;
         return { ...mission, reserved: true };
