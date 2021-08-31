@@ -21,8 +21,8 @@ const Rocket = ({ rocket }) => {
         <h2>{rocket.rocket_name}</h2>
         <p>{rocket.description}</p>
         {rocket.reserved
-          ? <button type="button" className="btn btn-outline-secondary" onClick={() => handleReserve(rocket.id)}>Cancel Reservation</button>
-          : <button type="button" className="btn btn-primary" onClick={() => handleReserveCancelation(rocket.id)}>Reserve Rocket</button>}
+          ? <button type="button" className="btn btn-outline-secondary" onClick={() => handleReserveCancelation(rocket.id)}>Cancel Reservation</button>
+          : <button type="button" className="btn btn-primary" onClick={() => handleReserve(rocket.id)}>Reserve Rocket</button>}
       </div>
     </li>
   );
