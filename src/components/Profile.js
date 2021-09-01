@@ -23,7 +23,11 @@ const Profile = () => {
   const reservedMissions = allMissions.filter((mission) => mission.reserved).map(
     (mission) => (
       <ListGroupItem key={mission.mission_id} className="d-flex align-items-center justify-content-between">
-        {mission.mission_name}
+        <span>
+          {mission.mission_name}
+          <br />
+          <a href={mission.wikipedia} target="blank">Read more</a>
+        </span>
         <Button variant="outline-danger" id={mission.mission_id} onClick={leaveMission}>Leave&nbsp;Mission</Button>
       </ListGroupItem>
     ),
@@ -33,7 +37,7 @@ const Profile = () => {
     <Container fluid className="border-top w-100 pt-2">
       <Row>
         <Col xs={12} md={6}>
-          <h4 className="ps-2 pb-2">My Missions</h4>
+          <h2>My Missions</h2>
           <Card>
             <ListGroup>
               {reservedMissions.length > 0 ? reservedMissions : (
@@ -53,7 +57,7 @@ const Profile = () => {
                 <ListGroup.Item key={rocket.id} className="list-group-item d-flex justify-content-between">
                   {rocket.rocket_name}
                   {' '}
-                  <Button variant="danger" onClick={() => dispatch(cancelReservation(rocket.id))}>Cancel Reservation</Button>
+                  <Button variant="outline-danger" onClick={() => dispatch(cancelReservation(rocket.id))}>Cancel Reservation</Button>
                 </ListGroup.Item>
               ))}
           </ListGroup>
