@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import {
   Badge,
   Button,
+  Image,
 } from 'react-bootstrap';
 import { reserveRocket, cancelReservation } from '../redux/rockets/rockets';
 
@@ -20,11 +21,11 @@ const Rocket = ({ rocket }) => {
 
   return (
     <li key={rocket.id} className="d-flex m-2 p-1">
-      <img src={rocket.flickr_images[0]} alt={rocket.rocket_name} className="w-25 ms-2 me-3" />
+      <Image src={rocket.flickr_images[0]} alt={rocket.rocket_name} className="w-25 ms-2 me-3" />
       <div className="flex-grow-3">
         <h2>{rocket.rocket_name}</h2>
         <p>
-          {rocket.reserved && <Badge bg="success" className="me-2">Success</Badge>}
+          {rocket.reserved && <Badge bg="success" className="me-2">Reserved</Badge>}
           {rocket.description}
         </p>
         {rocket.reserved
