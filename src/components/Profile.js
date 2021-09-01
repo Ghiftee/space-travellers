@@ -25,10 +25,14 @@ const Profile = () => {
     <Container fluid className="border-top w-100 pt-2">
       <Row>
         <Col xs={12} md={6}>
-          <h2>My Missions</h2>
+          <h4 className="ps-2 pb-2">My Missions</h4>
           <Card>
             <ListGroup>
-              {reservedMissions}
+              {reservedMissions.length > 0 ? reservedMissions : (
+                <ListGroupItem>
+                  No Missions Joined
+                </ListGroupItem>
+              )}
             </ListGroup>
           </Card>
         </Col>
