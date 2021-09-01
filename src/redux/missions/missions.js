@@ -2,7 +2,7 @@ const apiEndpoint = 'https://api.spacexdata.com/v3/missions';
 const initialState = [];
 
 const ADD_MISSION = 'missions/ADD_MISSION';
-const JOIN_MISSION = 'missions/JOIN_MISSION';
+const JOIN_OR_LEAVE_MISSION = 'missions/JOIN_OR_LEAVE_MISSION';
 
 const fetchAllMissions = async () => {
   let res = await fetch(apiEndpoint);
@@ -15,8 +15,8 @@ const addMission = (mission) => ({
   payload: mission,
 });
 
-export const joinAMission = (mission) => ({
-  type: JOIN_MISSION,
+export const toggleMissionState = (mission) => ({
+  type: JOIN_OR_LEAVE_MISSION,
   payload: mission,
 });
 
@@ -39,7 +39,7 @@ const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_MISSION:
       return [...state, action.payload];
-    case JOIN_MISSION:
+    case JOIN_OR_LEAVE_MISSION:
       theMission = state.find((mission) => mission.mission_id === action.payload.mission_id);
       if (theMission && theMission.reserved) {
         newState = state.map((mission) => {
