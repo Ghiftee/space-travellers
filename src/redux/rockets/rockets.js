@@ -1,5 +1,6 @@
 const FETCH_ROCKETS = 'space-travellers/rockets/FETCH_ROCKETS';
 const RESERVE_ROCKET = 'space-travellers/rockets/RESERVE_ROCKET';
+const CANCEL_RESERVATION = 'space-travellers/rockets/CANCEL_RESERVATION';
 const initialState = [];
 const baseAPI = 'https://api.spacexdata.com/v3/';
 
@@ -25,12 +26,21 @@ export const reserveRocket = (payload) => ({
   payload,
 });
 
+export const cancelReservation = (payload) => ({
+  type: CANCEL_RESERVATION,
+  payload,
+});
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS: return [...action.payload];
     case RESERVE_ROCKET: return state.map((rocket) => {
       if (rocket.id !== action.payload) return rocket;
       return { ...rocket, reserved: true };
+    });
+    case CANCEL_RESERVATION: return state.map((rocket) => {
+      if (rocket.id !== action.payload) return rocket;
+      return { ...rocket, reserved: false };
     });
     default:
       return state;
