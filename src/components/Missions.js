@@ -10,7 +10,9 @@ export default function Missions() {
   const allMissions = useSelector(missions);
 
   useEffect(() => {
-    dispatch(fetchMissions);
+    if (!allMissions.length > 0) {
+      dispatch(fetchMissions);
+    }
   }, [fetchMissions]);
 
   const joinOrLeaveMission = (e) => {
