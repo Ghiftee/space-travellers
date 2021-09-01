@@ -27,7 +27,7 @@ const Profile = () => {
       <ListGroup.Item key={rocket.id} className="list-group-item d-flex justify-content-between">
         {rocket.rocket_name}
         <div>
-          <Button variant="outline-primary" href={rocket.wikipedia} size="sm" className="me-1">Read More</Button>
+          <a href={rocket.wikipedia} target="_blank" className="btn btn-sm btn-outline-primary me-1" rel="noreferrer">Read More</a>
           <Button variant="outline-danger" size="sm" onClick={() => dispatch(cancelReservation(rocket.id))}>Cancel Reservation</Button>
         </div>
       </ListGroup.Item>
