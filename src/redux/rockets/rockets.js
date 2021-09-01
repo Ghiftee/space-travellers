@@ -13,6 +13,7 @@ export const fetchRockets = () => async (dispatch) => {
     rocket_name: rocket.rocket_name,
     description: rocket.description,
     flickr_images: rocket.flickr_images,
+    wikipedia: rocket.wikipedia,
   }));
 
   dispatch({
