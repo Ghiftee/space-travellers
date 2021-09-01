@@ -33,6 +33,19 @@ const Profile = () => {
     ),
   );
   const rocketState = useSelector((state) => state.rocketsReducer);
+  const reservedRockets = rocketState.filter((rocket) => rocket.reserved).length === 0
+    ? <ListGroupItem>No rockets reserved </ListGroupItem>
+    : rocketState.filter((rocket) => rocket.reserved).map((rocket) => (
+      <ListGroupItem key={rocket.id} className="d-flex align-items-center justify-content-between">
+        <div>
+          {rocket.rocket_name}
+          <br />
+          <a href={rocket.wikipedia} target="blank">Read More</a>
+        </div>
+        <Button variant="outline-danger" onClick={() => dispatch(cancelReservation(rocket.id))}>Cancel Reservation</Button>
+
+      </ListGroupItem>
+    ));
   return (
     <Container fluid className="border-top w-100 pt-2">
       <Row>
@@ -50,17 +63,11 @@ const Profile = () => {
         </Col>
         <Col xs={12} md={6}>
           <h2>My Rockets</h2>
-          <ListGroup>
-            {rocketState.filter((rocket) => rocket.reserved).length === 0
-              ? <ListGroup.Item>No rockets reserved </ListGroup.Item>
-              : rocketState.filter((rocket) => rocket.reserved).map((rocket) => (
-                <ListGroup.Item key={rocket.id} className="list-group-item d-flex justify-content-between">
-                  {rocket.rocket_name}
-                  {' '}
-                  <Button variant="outline-danger" onClick={() => dispatch(cancelReservation(rocket.id))}>Cancel Reservation</Button>
-                </ListGroup.Item>
-              ))}
-          </ListGroup>
+          <Card>
+            <ListGroup>
+              {reservedRockets}
+            </ListGroup>
+          </Card>
         </Col>
       </Row>
     </Container>
