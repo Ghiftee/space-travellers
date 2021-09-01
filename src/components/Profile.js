@@ -18,7 +18,9 @@ const Profile = () => {
         <Col>
           <h2>My Rockets</h2>
           <ListGroup>
-            {rocketState.filter((rocket) => rocket.reserved).map((rocket) => <ListGroup.Item key={rocket.id} className="list-group-item">{rocket.rocket_name}</ListGroup.Item>)}
+            {rocketState.filter((rocket) => rocket.reserved).length === 0
+              ? <ListGroup.Item>No rockets reserved </ListGroup.Item>
+              : rocketState.filter((rocket) => rocket.reserved).map((rocket) => <ListGroup.Item key={rocket.id} className="list-group-item">{rocket.rocket_name}</ListGroup.Item>)}
           </ListGroup>
         </Col>
       </Row>
