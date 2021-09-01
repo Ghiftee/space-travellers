@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
+import {
+  Badge,
+  Button,
+} from 'react-bootstrap';
 import { reserveRocket, cancelReservation } from '../redux/rockets/rockets';
 
 const Rocket = ({ rocket }) => {
@@ -20,12 +24,12 @@ const Rocket = ({ rocket }) => {
       <div className="flex-grow-3">
         <h2>{rocket.rocket_name}</h2>
         <p>
-          {rocket.reserved && (<span className="badge bg-success me-2">Reserved</span>)}
+          {rocket.reserved && <Badge bg="success" className="me-2">Success</Badge>}
           {rocket.description}
         </p>
         {rocket.reserved
-          ? <button type="button" className="btn btn-outline-secondary" onClick={() => handleReserveCancelation(rocket.id)}>Cancel Reservation</button>
-          : <button type="button" className="btn btn-primary" onClick={() => handleReserve(rocket.id)}>Reserve Rocket</button>}
+          ? <Button variant="outline-secondary" onClick={() => handleReserveCancelation(rocket.id)}>Cancel Reservation</Button>
+          : <Button variant="primary" onClick={() => handleReserve(rocket.id)}>Reserve Rocket</Button>}
       </div>
     </li>
   );
