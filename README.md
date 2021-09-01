@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Space Travellers' Hub
+> In this task, we worked with the real live data from the SpaceX API. We built a web application for a company that provides commercial and scientific space travel services. The application allows users to book rockets and join selected space missions.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* @Toliboff worked on the Rockets section of this project
+* @Ghiftee worked on the Missions section of this project
 
-## Available Scripts
+Each branch on this project was created from the dev branch and they represent a card on the Kanban board. After working on each card/branch(excluding the set-up branch which we worked on together), we reviewed each other's codes and did not begin work on the next card/branch until our pull request was approved.
 
-In the project directory, you can run:
+![Rockets Page](src/screenshots/screenshot1.png)
+![Missions Page](src/screenshots/screenshot2.png)
 
-### `npm start`
+## Live Link
+- [Heroku](https://space-travellers.herokuapp.com/)
+- [Netlify](https://space-travellers-app.netlify.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Built With
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* HTML
+* CSS
+* Javascript
+* React
+* Redux
+* SpaceX API
 
-### `npm test`
+## Project Objectives
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* Use React documentation.
+* Use React components.
+* Use React props.
+* Use React Router.
+* Connect React and Redux.
+* Handle events in a React app.
+* Write unit tests with React Testing Library.
+* Use styles in a React app.
+* Use React life cycle methods.
+* Apply React best practices and language style guides in code.
+* Use store, actions and reducers in React.
+* Perform a code review for a team member.
 
-### `npm run build`
+## Getting Started
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Clone this repo with:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    ```bash
+    git clone https://github.com/Ghiftee/space-travellers
+    ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Navigate to the folder/directory
 
-### `npm run eject`
+    ```bash
+    cd space-travellers
+    ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* On the commandline, at the project's root, run ```npm install``` to install app dependencies
+  
+* Run ```npm start``` which will start and watch the project
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Go to localhost to interact with the app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Authors
+👤 **Tolibjon Tolibov**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- GitHub: [@toliboff](https://https://github.com/toliboff)
+- LinkedIn: [Tolibjon](https://linkedin.com/in/tolibjon-tolibov)
 
-## Learn More
+👤 **Gift Uwhubetine**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Github: [@Ghiftee](https://github.com/Ghiftee)
+- LinkedIn: [gift-uwhubetine](https://www.linkedin.com/in/gift-uwhubetine-62675417a/)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to check the [issues page](../../issues/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Give a ⭐️ if you like this project!
